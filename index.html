@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DragonPath - Premium E-commerce Platform with exclusive products and fast delivery">
+    <meta name="description"
+        content="DragonPath - Premium E-commerce Platform with exclusive products and fast delivery">
     <title>DragonPath - Premium Shopping Experience</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Login/Signup Modal -->
     <div id="authModal" class="modal">
@@ -36,7 +41,8 @@
                     <label for="userEmail">Email Address</label>
                     <div class="input-wrapper">
                         <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
                             <polyline points="22,6 12,13 2,6"></polyline>
                         </svg>
                         <input type="email" id="userEmail" name="userEmail" placeholder="Enter your email" required>
@@ -46,9 +52,12 @@
                     <label for="userPhone">Phone Number</label>
                     <div class="input-wrapper">
                         <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
                         </svg>
-                        <input type="tel" id="userPhone" name="userPhone" placeholder="Enter your phone number" required>
+                        <input type="tel" id="userPhone" name="userPhone" placeholder="Enter your phone number"
+                            required>
                     </div>
                 </div>
                 <button type="submit" class="btn-primary btn-full">
@@ -71,7 +80,7 @@
                     <div class="dragon-icon small">🐉</div>
                     <span class="brand-name">DragonPath</span>
                 </div>
-                
+
                 <div class="search-section">
                     <div class="search-container">
                         <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -82,7 +91,7 @@
                         <div id="searchSuggestions" class="search-suggestions hidden"></div>
                     </div>
                 </div>
-                
+
                 <div class="user-section">
                     <div class="cart-icon" id="cartBtn">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -92,9 +101,9 @@
                         </svg>
                         <span id="cartCount" class="cart-count">0</span>
                     </div>
-                    <div class="user-avatar" id="userAvatar">
+                    <a href="profile.html" class="user-avatar" id="userAvatar" title="My Profile">
                         <span id="userInitial">U</span>
-                    </div>
+                    </a>
                 </div>
             </div>
         </header>
@@ -105,7 +114,8 @@
             <section class="hero-section">
                 <div class="hero-content">
                     <h1 class="hero-title">Discover <span class="gradient-text">Extraordinary</span> Products</h1>
-                    <p class="hero-subtitle">Shop the finest collection with exclusive deals and lightning-fast delivery</p>
+                    <p class="hero-subtitle">Shop the finest collection with exclusive deals and lightning-fast delivery
+                    </p>
                 </div>
                 <div class="hero-decoration">
                     <div class="floating-shape shape-1"></div>
@@ -170,7 +180,7 @@
                         <span id="modalProductStock" class="stock-count"></span>
                     </div>
                     <p id="modalProductDescription" class="product-description"></p>
-                    
+
                     <div class="quantity-section">
                         <label>Quantity:</label>
                         <div class="quantity-controls">
@@ -179,12 +189,12 @@
                             <button class="qty-btn" id="qtyPlus">+</button>
                         </div>
                     </div>
-                    
+
                     <div class="total-section">
                         <span class="total-label">Total:</span>
                         <span id="modalTotalPrice" class="total-price"></span>
                     </div>
-                    
+
                     <button class="btn-primary btn-full" id="orderNowBtn">
                         <span>Order Now</span>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -214,13 +224,13 @@
                 <h2>Delivery Location</h2>
                 <p>Choose where you want your order delivered</p>
             </div>
-            
+
             <!-- Saved Locations -->
             <div id="savedLocationsSection" class="saved-locations-section hidden">
                 <h3>Saved Locations</h3>
                 <div id="savedLocationsList" class="saved-locations-list"></div>
             </div>
-            
+
             <form id="deliveryForm" class="delivery-form">
                 <div class="form-group">
                     <label for="addressLine1">Address Line 1 *</label>
@@ -254,7 +264,7 @@
                     <input type="checkbox" id="saveAsDefault">
                     <label for="saveAsDefault">Save as default delivery location</label>
                 </div>
-                
+
                 <div class="order-summary">
                     <h3>Order Summary</h3>
                     <div class="summary-row">
@@ -270,7 +280,7 @@
                         <span id="summaryTotal"></span>
                     </div>
                 </div>
-                
+
                 <button type="submit" class="btn-primary btn-full btn-order">
                     <span>Place Order</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -300,4 +310,5 @@
     <script src="data.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>
