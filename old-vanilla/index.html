@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="DragonPath - Premium E-commerce Platform with exclusive products and fast delivery">
+    <title>DragonPath - Premium Shopping Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Login/Signup Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content auth-modal">
+            <div class="auth-header">
+                <div class="logo-container">
+                    <div class="dragon-icon">🐉</div>
+                    <h1 class="brand-name">DragonPath</h1>
+                </div>
+                <p class="auth-subtitle">Welcome! Sign in to start your journey</p>
+            </div>
+            <form id="authForm" class="auth-form">
+                <div class="form-group">
+                    <label for="userName">Full Name</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <input type="text" id="userName" name="userName" placeholder="Enter your full name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">Email Address</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <input type="email" id="userEmail" name="userEmail" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="userPhone">Phone Number</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                        <input type="tel" id="userPhone" name="userPhone" placeholder="Enter your phone number"
+                            required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary btn-full">
+                    <span>Continue Shopping</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div id="mainApp" class="hidden">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-container">
+                <div class="logo-section">
+                    <div class="dragon-icon small">🐉</div>
+                    <span class="brand-name">DragonPath</span>
+                </div>
+
+                <div class="search-section">
+                    <div class="search-container">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" id="searchInput" placeholder="Search for products..." autocomplete="off">
+                        <div id="searchSuggestions" class="search-suggestions hidden"></div>
+                    </div>
+                </div>
+
+                <div class="user-section">
+                    <div class="cart-icon" id="cartBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span id="cartCount" class="cart-count">0</span>
+                    </div>
+                    <a href="profile.html" class="user-avatar" id="userAvatar" title="My Profile">
+                        <span id="userInitial">U</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">Discover <span class="gradient-text">Extraordinary</span> Products</h1>
+                    <p class="hero-subtitle">Shop the finest collection with exclusive deals and lightning-fast delivery
+                    </p>
+                </div>
+                <div class="hero-decoration">
+                    <div class="floating-shape shape-1"></div>
+                    <div class="floating-shape shape-2"></div>
+                    <div class="floating-shape shape-3"></div>
+                </div>
+            </section>
+
+            <!-- Categories Section -->
+            <section class="categories-section">
+                <h2 class="section-title">Shop by Category</h2>
+                <div class="categories-grid" id="categoriesGrid">
+                    <!-- Categories will be dynamically populated -->
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section class="products-section">
+                <div class="products-header">
+                    <h2 class="section-title" id="productsTitle">All Products</h2>
+                    <button class="btn-secondary" id="showAllBtn">Show All</button>
+                </div>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be dynamically populated -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="dragon-icon small">🐉</div>
+                    <span>DragonPath</span>
+                </div>
+                <p class="footer-text">© 2026 DragonPath. Premium shopping experience.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal hidden">
+        <div class="modal-content product-modal">
+            <button class="modal-close" id="closeProductModal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="product-detail">
+                <div class="product-image-container">
+                    <img id="modalProductImage" src="" alt="Product" class="product-detail-image">
+                </div>
+                <div class="product-info">
+                    <h2 id="modalProductName" class="product-detail-name"></h2>
+                    <p id="modalProductCategory" class="product-detail-category"></p>
+                    <div class="product-detail-price">
+                        <span id="modalProductPrice" class="price-main"></span>
+                    </div>
+                    <div class="stock-info">
+                        <span class="stock-label">In Stock:</span>
+                        <span id="modalProductStock" class="stock-count"></span>
+                    </div>
+                    <p id="modalProductDescription" class="product-description"></p>
+
+                    <div class="quantity-section">
+                        <label>Quantity:</label>
+                        <div class="quantity-controls">
+                            <button class="qty-btn" id="qtyMinus">−</button>
+                            <input type="number" id="quantityInput" value="1" min="1">
+                            <button class="qty-btn" id="qtyPlus">+</button>
+                        </div>
+                    </div>
+
+                    <div class="total-section">
+                        <span class="total-label">Total:</span>
+                        <span id="modalTotalPrice" class="total-price"></span>
+                    </div>
+
+                    <button class="btn-primary btn-full" id="orderNowBtn">
+                        <span>Order Now</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delivery/Location Modal -->
+    <div id="deliveryModal" class="modal hidden">
+        <div class="modal-content delivery-modal">
+            <button class="modal-close" id="closeDeliveryModal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="delivery-header">
+                <svg class="delivery-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <h2>Delivery Location</h2>
+                <p>Choose where you want your order delivered</p>
+            </div>
+
+            <!-- Saved Locations -->
+            <div id="savedLocationsSection" class="saved-locations-section hidden">
+                <h3>Saved Locations</h3>
+                <div id="savedLocationsList" class="saved-locations-list"></div>
+            </div>
+
+            <form id="deliveryForm" class="delivery-form">
+                <div class="form-group">
+                    <label for="addressLine1">Address Line 1 *</label>
+                    <input type="text" id="addressLine1" placeholder="Street address" required>
+                </div>
+                <div class="form-group">
+                    <label for="addressLine2">Address Line 2</label>
+                    <input type="text" id="addressLine2" placeholder="Apartment, suite, unit, etc.">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City *</label>
+                        <input type="text" id="city" placeholder="City" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State/Province *</label>
+                        <input type="text" id="state" placeholder="State" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="postalCode">Postal Code *</label>
+                        <input type="text" id="postalCode" placeholder="Postal code" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country *</label>
+                        <input type="text" id="country" placeholder="Country" required>
+                    </div>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="saveAsDefault">
+                    <label for="saveAsDefault">Save as default delivery location</label>
+                </div>
+
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-row">
+                        <span>Product:</span>
+                        <span id="summaryProductName"></span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Quantity:</span>
+                        <span id="summaryQuantity"></span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="summaryTotal"></span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary btn-full btn-order">
+                    <span>Place Order</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Order Success Modal -->
+    <div id="successModal" class="modal hidden">
+        <div class="modal-content success-modal">
+            <div class="success-animation">
+                <div class="success-checkmark">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+            </div>
+            <h2>Order Placed Successfully!</h2>
+            <p>Thank you for your order. You will receive a confirmation shortly.</p>
+            <button class="btn-primary" id="continueShoppingBtn">Continue Shopping</button>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
