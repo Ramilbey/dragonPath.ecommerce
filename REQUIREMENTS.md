@@ -19,7 +19,7 @@
 ### 2.1 User Roles & Authentication
 - **FR-01**: System shall support four user roles: Guest, Buyer, Seller, Admin.
 - **FR-02**: Sellers must complete **verified onboarding** including:
-  - Government-issued business registration documents.
+  - Government-issued business registration documents.cat 
   - Physical address of shop/factory (with geolocation).
   - Photo/video proof of product authenticity.
   - Identity verification (KYC-style).
