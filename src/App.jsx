@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { AppProvider } from './context/AppContext'
 import HomePage from './pages/HomePage'
 import ProfilePage from './pages/ProfilePage'
+import CartPage from './pages/CartPage'
 import AuthModal from './components/AuthModal'
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
             {user && (
                 <Routes>
                     <Route path="/" element={<HomePage user={user} />} />
+                    <Route path="/cart" element={<CartPage user={user} />} />
                     <Route path="/profile" element={<ProfilePage user={user} setUser={setUser} onLogout={handleLogout} />} />
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>

@@ -79,6 +79,19 @@ export function AppProvider({ children }) {
         localStorage.setItem('dragonPathCart', JSON.stringify(newCart))
     }
 
+    const updateCartQuantity = (productId, quantity) => {
+        const newCart = cart.map(item =>
+            item.id === productId ? { ...item, quantity } : item
+        )
+        setCart(newCart)
+        localStorage.setItem('dragonPathCart', JSON.stringify(newCart))
+    }
+
+    const clearCart = () => {
+        setCart([])
+        localStorage.removeItem('dragonPathCart')
+    }
+
     const addToWishlist = (product) => {
         if (!wishlist.find(item => item.id === product.id)) {
             const newWishlist = [...wishlist, product]
@@ -146,6 +159,8 @@ export function AppProvider({ children }) {
             savedLocations,
             addToCart,
             removeFromCart,
+            updateCartQuantity,
+            clearCart,
             addToWishlist,
             removeFromWishlist,
             placeOrder
