@@ -1,5 +1,5 @@
 # Software Requirements Specification (SRS)  
-**Project Name**: SilkRoad Exchange Platform  
+**Project Name**: DragonPath
 **Vision**: Revive the spirit of the historic Silk Road by enabling trusted, ethical, and seamless commerce across Asia—where sellers and buyers from all former Silk Road nations exchange goods, culture, and value with full transparency and mutual respect.
 
 ---
