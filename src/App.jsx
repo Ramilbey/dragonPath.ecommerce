@@ -7,6 +7,8 @@ import ProfilePage from './pages/ProfilePage'
 import CartPage from './pages/CartPage'
 import AdminPage from './pages/AdminPage'
 import SellerDashboard from './pages/SellerDashboard'
+import ProductPage from './pages/ProductPage'
+import ProductReviewsPage from './pages/ProductReviewsPage'
 import AuthModal from './components/AuthModal'
 
 function App() {
@@ -63,6 +65,10 @@ function App() {
                         )
                     } />
 
+                    {/* Product Routes */}
+                    <Route path="/product/:productId" element={<ProductPage user={user} onLogout={handleLogout} />} />
+                    <Route path="/product/:productId/reviews" element={<ProductReviewsPage user={user} onLogout={handleLogout} />} />
+
                     {/* Seller Routes (FR-04) */}
                     <Route path="/seller" element={
                         user.role === USER_ROLES.SELLER ? (
@@ -104,3 +110,4 @@ function App() {
 }
 
 export default App
+

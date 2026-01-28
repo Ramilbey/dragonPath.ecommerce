@@ -6,8 +6,10 @@
 import { useState } from 'react'
 import { mockReviews, moderateContent, addReview, getProductReviews } from '../data/reviews'
 
-function ProductReviews({ productId, user, onClose }) {
-    const [reviews, setReviews] = useState(getProductReviews(productId))
+function ProductReviews({ productId, user, onClose, previewMode = false, maxReviews = null }) {
+    const allReviews = getProductReviews(productId)
+    const displayReviews = maxReviews ? allReviews.slice(0, maxReviews) : allReviews
+    const [reviews, setReviews] = useState(displayReviews)
     const [showAddReview, setShowAddReview] = useState(false)
     const [selectedLanguage, setSelectedLanguage] = useState('en')
     const [newReview, setNewReview] = useState({

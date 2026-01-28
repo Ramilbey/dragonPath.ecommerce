@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router-dom'
 import { useApp } from '../context/AppContext'
 
 function ProductCard({ product, onClick }) {
+    const navigate = useNavigate()
     const { categories, wishlist, addToWishlist, removeFromWishlist } = useApp()
 
     const isInWishlist = wishlist.some(item => item.id === product.id)
@@ -22,8 +24,13 @@ function ProductCard({ product, onClick }) {
         }
     }
 
+    const handleCardClick = () => {
+        // Navigate to product detail page
+        navigate(`/product/${product.id}`)
+    }
+
     return (
-        <div className="product-card" onClick={onClick}>
+        <div className="product-card" onClick={handleCardClick}>
             <div className="product-image-wrapper">
                 <img
                     src={product.image}
@@ -57,3 +64,4 @@ function ProductCard({ product, onClick }) {
 }
 
 export default ProductCard
+
