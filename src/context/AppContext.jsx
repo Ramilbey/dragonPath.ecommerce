@@ -149,6 +149,21 @@ export function AppProvider({ children }) {
         return newOrder
     }
 
+    const addOrder = (orderData) => {
+        const newOrder = {
+            id: orderData.id || `DP-2026-${String(orders.length + 1).padStart(6, '0')}`,
+            date: orderData.date || new Date().toISOString().split('T')[0],
+            status: orderData.status || 'processing',
+            total: orderData.total,
+            items: orderData.items,
+            shippingAddress: orderData.shippingAddress
+        }
+        const newOrders = [newOrder, ...orders]
+        setOrders(newOrders)
+        localStorage.setItem('dragonPathOrders', JSON.stringify(newOrders))
+        return newOrder
+    }
+
     return (
         <AppContext.Provider value={{
             products,
@@ -163,7 +178,8 @@ export function AppProvider({ children }) {
             clearCart,
             addToWishlist,
             removeFromWishlist,
-            placeOrder
+            placeOrder,
+            addOrder
         }}>
             {children}
         </AppContext.Provider>
